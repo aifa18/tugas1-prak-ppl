@@ -21,7 +21,7 @@ Tasks API adalah RESTful API sederhana yang dibangun menggunakan Node.js dan Exp
 
 ### Format Response Standar
 
-**Success Response (Contoh: GET /tasks/1) ✅**
+**Success Response (Contoh: GET /tasks/1)**
 ```json
 {
   "status": "OK",
@@ -36,7 +36,7 @@ Tasks API adalah RESTful API sederhana yang dibangun menggunakan Node.js dan Exp
 }
 ```
 
-**Error Response (Contoh: POST /tasks tanpa title) ❌**
+**Error Response (Contoh: POST /tasks tanpa title)**
 ```json
 {
   "status": "ERROR",
