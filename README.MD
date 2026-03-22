@@ -3,7 +3,7 @@
 **Nama:** Azmi Naifah Iftinah  
 **NPM:** 140810230013  
 **Mata Kuliah:** Praktikum Perangkat Lunak 1  
-
+![CI/CS Status](https://github.com/aifa18/tugas1-prak-ppl/actions/workflows/main.yml/badge.svg)
 ---
 
 ## 1. Deskripsi Project

@@ -1,0 +1,17 @@
+# Dependency folders
+node_modules/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Testing coverage
+coverage/
+
+# OS metadata
+.DS_Store
+Thumbs.db
