@@ -1,0 +1,37 @@
+name: API CI/CS Pipeline
+
+# 1. TRIGGER: Kapan automasi ini berjalan?
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  # 2. ENVIRONMENT: Di mana kode dijalankan?
+  test-and-scan:
+    runs-on: ubuntu-latest
+
+    # 3. STEPS: Apa saja instruksi spesifiknya?
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run Unit Tests (CI)
+      run: npm test
+
+    - name: Check for Secrets (CS)
+      uses: gitleaks/gitleaks-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Build Docker Image (Test Dockerfile)
+      run: docker build -t task-api:latest .
